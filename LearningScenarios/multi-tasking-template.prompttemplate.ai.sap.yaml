@@ -1,0 +1,22 @@
+name: multi_task
+version: 1.1.1
+scenario: multi-task-processing
+spec:
+  template:
+    - role: "system"
+      content: |
+        Perform multiple tasks at once: Detect language and translate to English.
+        Respond in the following format:
+        Language: <detected_language>
+        Converted to English: <translated_text>
+    - role: "user"
+      content: "Text: {{ ?input_text }}"
+  additionalFields:
+    isDev: true
+    validations:
+      required: true
+    blockedModels:
+      - name: "gpt-4"
+        versions: "gpt-4-vision"
+      - name: "gpt-4o"
+        versions: "*"

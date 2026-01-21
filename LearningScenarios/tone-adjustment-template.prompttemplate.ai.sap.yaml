@@ -1,0 +1,21 @@
+name: multi_task
+version: 1.1.1
+scenario: multi-task-processing
+spec:
+  template:
+    - role: "system"
+      content: |
+        Translate the following input to a Corporate language.
+        Respond in the following format:
+        Corporate Version: {{ corporate_output }}
+    - role: "user"
+      content: "Text: {{ ?input_text }}"
+  additionalFields:
+    isDev: true
+    validations:
+      required: true
+    blockedModels:
+      - name: "gpt-4"
+        versions: "gpt-4-vision"
+      - name: "gpt-4o"
+        versions: "*"

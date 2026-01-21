@@ -1,0 +1,23 @@
+name: multi_task
+version: 1.1.1
+scenario: multi-task-processing
+spec:
+  template:
+    - role: "system"
+      content: |
+        Answer the question based on the given context.
+        Respond in the following format:
+        Answer: {{ answer_output }}
+    - role: "user"
+      content: |
+        Context: {{ ?context }}
+        Question: {{ ?question }}
+  additionalFields:
+    isDev: true
+    validations:
+      required: true
+    blockedModels:
+      - name: "gpt-4"
+        versions: "gpt-4-vision"
+      - name: "gpt-4o"
+        versions: "*"

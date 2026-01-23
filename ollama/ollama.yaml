@@ -23,7 +23,7 @@ spec:
     spec: |
       predictor:
         imagePullSecrets:
-        - name: psdockerhub
+        - name: Default
         minReplicas: 1
         maxReplicas: 1
         containers:
@@ -33,4 +33,5 @@ spec:
             - containerPort: 8080
 
               protocol: TCP
+
 

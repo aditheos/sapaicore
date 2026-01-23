@@ -19,4 +19,5 @@ spec:
       - name: "gpt-4"
         versions: "gpt-4-vision"
       - name: "gpt-4o"
+
         versions: "*"

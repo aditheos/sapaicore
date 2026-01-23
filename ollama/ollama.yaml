@@ -23,7 +23,7 @@ spec:
     spec: |
       predictor:
         imagePullSecrets:
-        - name: dckr_pat_fHMYEzM_hQzwAdkhFpnoM91PFMw
+        - name: psdockerhub
         minReplicas: 1
         maxReplicas: 1
         containers:
@@ -31,4 +31,5 @@ spec:
           image: https://hub.docker.com/repository/docker/prakashsaurav/ollama:ai-core
           ports:
             - containerPort: 8080
+
               protocol: TCP
